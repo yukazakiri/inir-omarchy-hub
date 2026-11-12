@@ -13,10 +13,10 @@
 var inspectFormat = '{{.Id}}|{{.Name}}|{{.Config.Image}}|{{.State.Status}}|{{.HostConfig.Memory}}|{"health":{{with index .State "Health"}}{{json .Status}}{{else}}""{{end}},'
   + '"project":{{json (index .Config.Labels "com.docker.compose.project")}},'
   + '"service":{{json (index .Config.Labels "com.docker.compose.service")}},'
-  + '"ports":{{json .NetworkSettings.Ports}},"exposedPorts":{{json .Config.ExposedPorts}},'
-  + '"mounts":{{json .Mounts}},"startedAt":{{json .State.StartedAt}},"finishedAt":{{json .State.FinishedAt}},'
+  + '"ports":{{with index .NetworkSettings "Ports"}}{{json .}}{{else}}null{{end}},"exposedPorts":{{with index .Config "ExposedPorts"}}{{json .}}{{else}}null{{end}},'
+  + '"mounts":{{with .Mounts}}{{json .}}{{else}}null{{end}},"startedAt":{{json .State.StartedAt}},"finishedAt":{{json .State.FinishedAt}},'
   + '"exitCode":{{json .State.ExitCode}},"oomKilled":{{json .State.OOMKilled}},"error":{{json .State.Error}},'
-  + '"nanoCpus":{{json .HostConfig.NanoCpus}}}'
+  + '"nanoCpus":{{with index .HostConfig "NanoCpus"}}{{json .}}{{else}}null{{end}}}'
 var snapshotScript = [
   // Each command is capped before command substitution can retain its output.
   // The outer command bounds time and memory for the entire process group.

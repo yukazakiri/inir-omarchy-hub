@@ -1,6 +1,6 @@
 {
   "$schema": "../../schema/hub.schema.json",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "summary": "Docker containers, status and controls on your desktop",
   "authors": [
     "yukazakiri"
@@ -16,5 +16,10 @@
     "process"
   ],
   "preview": "preview.webp",
-  "minInir": "3.0.0"
+  "minInir": "3.0.0",
+  "changes": {
+    "0.1.1": [
+      "Docker inspect works with containers that do not expose ports"
+    ]
+  }
 }

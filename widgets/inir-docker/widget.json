@@ -1,7 +1,7 @@
 {
   "name": "iNiR Docker",
   "icon": "deployed_code",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "yukazakiri",
   "description": "Docker containers on your desktop: status, CPU and memory, start/stop/restart and logs. Based on Omarchy Control Docker.",
   "category": "system",
