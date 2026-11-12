@@ -1,7 +1,7 @@
 {
  "blocked": [],
- "commit": "f10c6152f909c93d48dc88eb387f68ee6c0c3f0b",
- "generated": "2026-11-12T09:16:39+00:00",
+ "commit": "c3bb363709e067413f58d042307bb3807b53a700",
+ "generated": "2026-11-12T09:33:46+00:00",
  "home": "https://github.com/snowarch/inir-hub",
  "items": [
   {
@@ -11,9 +11,9 @@
    ],
    "changes": [
     {
-     "version": "0.5.0",
+     "version": "0.6.0",
      "notes": [
-      "RAM and CPU limit sliders with presets"
+      "Layout switch in the widget header, layout IPC and a visual layout picker"
      ]
     }
    ],
@@ -28,14 +28,14 @@
    "license": "MIT",
    "minInir": "3.0.0",
    "name": "iNiR Docker",
-   "package": "packages/inir-docker-0.5.0.tar.gz",
+   "package": "packages/inir-docker-0.6.0.tar.gz",
    "path": "widgets/inir-docker",
    "permissions": [
     "process"
    ],
    "preview": "previews/inir-docker.webp",
-   "sha256": "f72fba586cff30caca93998b6c5f711e681587ec613ba59a6963e5f4b8486651",
-   "size": 19145,
+   "sha256": "23dc1d151d97da577fdccc5443a49cefccd3687cf496f4ca5c4e8cb7923b546c",
+   "size": 19565,
    "summary": "Docker containers with live CPU and memory",
    "surfaces": [
     "desktop",
@@ -48,7 +48,7 @@
     "dev"
    ],
    "updated": "2026-11-12",
-   "version": "0.5.0"
+   "version": "0.6.0"
   }
  ],
  "name": "iNiR Hub",
