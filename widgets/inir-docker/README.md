@@ -21,8 +21,15 @@ can be added next.
 ## Install locally
 
 ```bash
+# From this folder:
 mkdir -p ~/.config/inir/widgets
-cp -r /home/misomarchy/inir-docker ~/.config/inir/widgets/inir-docker
+cp -r inir-docker ~/.config/inir/widgets/inir-docker
+```
+
+If the folder is in a Hub source, install it with:
+
+```bash
+inir hub install inir-docker
 ```
 
 Then open **Settings → Desktop Widgets**, enable **iNiR Docker**, or add it from
