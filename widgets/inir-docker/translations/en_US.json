@@ -33,5 +33,6 @@
     "removing": "removing",
     "restarting": "restarting",
     "running": "running",
-    "unreadable": "unreadable"
+    "unreadable": "unreadable",
+    "MEMORY": "MEMORY"
 }

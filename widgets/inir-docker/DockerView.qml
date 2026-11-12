@@ -6,8 +6,8 @@ import qs.modules.common.functions
 import qs.modules.common.widgets
 import "docker.js" as Docker
 
-// The drawing shared by the desktop card and the optional edge panel. All
-// state and actions live in DockerBackend; this file only lays out.
+// The drawing shared by the desktop card and any future family sidebar host.
+// All state and actions live in DockerBackend; this file only lays out.
 
 ColumnLayout {
     id: view
@@ -75,17 +75,56 @@ ColumnLayout {
 
     StyledText {
         Layout.fillWidth: true
-        visible: view.backend.targetLabel.length > 0
+        visible: view.backend.targetLabel.length > 0 && view.backend.layout !== "compact"
         text: view.backend.targetLabel
         elide: Text.ElideRight
         font.pixelSize: Math.round(Appearance.font.pixelSize.smaller * view.scaleFactor)
         color: ColorUtils.applyAlpha(view.ink, 0.55)
     }
 
+    // ── Compact summary ──────────────────────────────────────
+    RowLayout {
+        Layout.fillWidth: true
+        visible: view.backend.layout === "compact" && view.backend.error.length === 0 && view.backend.hasData
+        spacing: Math.round(8 * view.scaleFactor)
+
+        Rectangle {
+            width: Math.round(6 * view.scaleFactor)
+            height: width
+            radius: width / 2
+            color: view.accent
+        }
+        StyledText {
+            text: view.backend.runningCount + "/" + view.backend.totalCount
+            font.family: view.numbersFamily
+            font.pixelSize: Math.round(Appearance.font.pixelSize.smaller * view.scaleFactor)
+            font.weight: Font.DemiBold
+            color: view.ink
+        }
+        Rectangle {
+            width: 1
+            height: Math.round(11 * view.scaleFactor)
+            color: ColorUtils.applyAlpha(view.ink, 0.15)
+        }
+        StyledText {
+            text: "CPU " + view.backend.totalCpu.toFixed(1) + "%"
+            font.family: view.numbersFamily
+            font.pixelSize: Math.round(Appearance.font.pixelSize.smaller * view.scaleFactor)
+            color: ColorUtils.applyAlpha(view.ink, 0.65)
+        }
+        StyledText {
+            text: "MEM " + Docker.formatBytes(view.backend.totalMemBytes)
+            font.family: view.numbersFamily
+            font.pixelSize: Math.round(Appearance.font.pixelSize.smaller * view.scaleFactor)
+            color: ColorUtils.applyAlpha(view.ink, 0.65)
+        }
+        Item { Layout.fillWidth: true }
+    }
+
     // ── Monitoring strip ─────────────────────────────────────
     DockerSummary {
         Layout.fillWidth: true
-        visible: view.backend.showSummary && view.backend.error.length === 0 && view.backend.hasData
+        visible: view.backend.layout !== "compact" && view.backend.showSummary && view.backend.error.length === 0 && view.backend.hasData
         scaleFactor: view.scaleFactor
         ink: view.ink
         accent: view.accent
@@ -132,6 +171,7 @@ ColumnLayout {
     Column {
         id: rows
         Layout.fillWidth: true
+        visible: view.backend.layout !== "tiles"
         spacing: Math.round(2 * view.scaleFactor)
 
         Repeater {
@@ -165,6 +205,16 @@ ColumnLayout {
         text: Translation.tr("+%1 more").arg(view.backend.hiddenCount)
         font.pixelSize: Math.round(Appearance.font.pixelSize.smaller * view.scaleFactor)
         color: ColorUtils.applyAlpha(view.ink, 0.55)
+    }
+
+    DockerTiles {
+        Layout.fillWidth: true
+        visible: view.backend.layout === "tiles" && view.backend.shown.length > 0
+        backend: view.backend
+        scaleFactor: view.scaleFactor
+        ink: view.ink
+        accent: view.accent
+        numbersFamily: view.numbersFamily
     }
 
     // ── Selected container ───────────────────────────────────

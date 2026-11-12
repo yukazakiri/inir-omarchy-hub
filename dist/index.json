@@ -1,7 +1,7 @@
 {
  "blocked": [],
- "commit": "75ee51cc44aed394465e39895f7fea2ccefc859f",
- "generated": "2026-11-12T08:30:28+00:00",
+ "commit": "75a034b58cdb4afb55ec974a2d0ec17fcfbc035f",
+ "generated": "2026-11-12T08:50:18+00:00",
  "home": "https://github.com/snowarch/inir-hub",
  "items": [
   {
@@ -11,13 +11,13 @@
    ],
    "changes": [
     {
-     "version": "0.2.1",
+     "version": "0.4.0",
      "notes": [
-      "Shared Docker view for the desktop and future family sidebar hosts"
+      "Dashboard, compact and tile layouts with a visual monitoring redesign"
      ]
     }
    ],
-   "description": "Docker containers on your desktop: a running/CPU/memory summary, CPU history, per-container bars, lifecycle controls and logs.",
+   "description": "Docker containers on your desktop with three layouts: a monitoring dashboard, a compact list and a visual tile grid. Live CPU/memory bars, lifecycle controls and logs.",
    "families": [
     "material",
     "iris"
@@ -28,14 +28,14 @@
    "license": "MIT",
    "minInir": "3.0.0",
    "name": "iNiR Docker",
-   "package": "packages/inir-docker-0.2.1.tar.gz",
+   "package": "packages/inir-docker-0.4.0.tar.gz",
    "path": "widgets/inir-docker",
    "permissions": [
     "process"
    ],
    "preview": "previews/inir-docker.webp",
-   "sha256": "c9bb12d7bd7df5a7e242436a7616b7042dc5680126f901e8b1fc5edb6f741250",
-   "size": 14819,
+   "sha256": "5d20b8fad33610576089b8e266786b0a13dba9f78cf2df4c431c1ddea5dafda5",
+   "size": 16353,
    "summary": "Docker containers with live CPU and memory",
    "surfaces": [
     "desktop",
@@ -48,7 +48,7 @@
     "dev"
    ],
    "updated": "2026-11-12",
-   "version": "0.2.1"
+   "version": "0.4.0"
   }
  ],
  "name": "iNiR Hub",

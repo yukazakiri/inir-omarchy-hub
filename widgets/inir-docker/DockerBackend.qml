@@ -4,8 +4,8 @@ import Quickshell.Io
 import qs.services
 import "docker.js" as Docker
 
-// Docker state, polling, lifecycle actions and parsing. No drawing: the desktop
-// card and the optional edge panel share this one backend.
+// Docker state, polling, lifecycle actions and parsing. No drawing: the
+// desktop card and any future family sidebar host share this one backend.
 
 Item {
     id: root
@@ -13,7 +13,7 @@ Item {
     width: 0
     height: 0
 
-    // Set by the surface that is showing: the desktop card or the edge panel.
+    // Set by the surface that is showing: the desktop card or a sidebar host.
     property bool active: false
 
     property var snapshot: null
@@ -33,6 +33,10 @@ Item {
     readonly property bool showSummary: Boolean(CustomWidgets.getConfigValue("inir-docker", "showSummary", true))
     readonly property bool showSparkline: Boolean(CustomWidgets.getConfigValue("inir-docker", "showSparkline", true))
     readonly property string filterText: String(CustomWidgets.getConfigValue("inir-docker", "filter", ""))
+    readonly property string layout: {
+        const value = String(CustomWidgets.getConfigValue("inir-docker", "layout", "dashboard"))
+        return ["dashboard", "compact", "tiles"].includes(value) ? value : "dashboard"
+    }
 
     readonly property var containers: (root.snapshot && root.snapshot.containers) ? root.snapshot.containers : []
     readonly property var filtered: {

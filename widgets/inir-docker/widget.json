@@ -1,9 +1,9 @@
 {
   "name": "iNiR Docker",
   "icon": "deployed_code",
-  "version": "0.2.1",
+  "version": "0.4.0",
   "author": "yukazakiri",
-  "description": "Docker containers on your desktop: a running/CPU/memory summary, CPU history, per-container bars, lifecycle controls and logs.",
+  "description": "Docker containers on your desktop with three layouts: a monitoring dashboard, a compact list and a visual tile grid. Live CPU/memory bars, lifecycle controls and logs.",
   "category": "system",
   "main": "Docker.qml",
   "iris": {
@@ -31,7 +31,8 @@
     "showStopped": true,
     "filter": "",
     "showSummary": true,
-    "showSparkline": true
+    "showSparkline": true,
+    "layout": "dashboard"
   },
   "configKeys": {
     "refreshSeconds": {
@@ -69,13 +70,32 @@
       "type": "bool",
       "default": true,
       "label": "Show CPU history"
+    },
+    "layout": {
+      "type": "string",
+      "default": "dashboard",
+      "label": "Layout",
+      "options": [
+        {
+          "label": "Dashboard",
+          "value": "dashboard"
+        },
+        {
+          "label": "Compact",
+          "value": "compact"
+        },
+        {
+          "label": "Tiles",
+          "value": "tiles"
+        }
+      ]
     }
   },
   "resizableAxes": {
     "uniform": "widgetScale"
   },
   "defaultSize": {
-    "width": 420,
-    "height": 360
+    "width": 440,
+    "height": 380
   }
 }

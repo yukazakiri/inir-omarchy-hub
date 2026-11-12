@@ -1,6 +1,6 @@
 {
   "$schema": "../../schema/hub.schema.json",
-  "version": "0.2.1",
+  "version": "0.4.0",
   "summary": "Docker containers with live CPU and memory",
   "authors": [
     "yukazakiri"
@@ -18,9 +18,9 @@
   "preview": "preview.webp",
   "minInir": "3.0.0",
   "changes": {
-    "0.2.1": [
-      "Shared Docker view for the desktop and future family sidebar hosts"
+    "0.4.0": [
+      "Dashboard, compact and tile layouts with a visual monitoring redesign"
     ]
   },
-  "description": "Docker containers on your desktop with a monitoring summary, CPU history, per-container CPU/memory bars, lifecycle controls and logs."
+  "description": "Docker containers on your desktop in three layouts: a monitoring dashboard, a compact list and a visual tile grid, with live CPU/memory bars, lifecycle controls and logs."
 }

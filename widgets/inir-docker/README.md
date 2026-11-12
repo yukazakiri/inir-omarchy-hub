@@ -1,27 +1,35 @@
 # iNiR Docker
 
-Docker containers on your iNiR desktop. A port of
-[devgtv/omarchy-docker](https://github.com/devgtv/omarchy-docker) to iNiR's
-desktop-widget API.
+Docker containers on your iNiR desktop, with three layouts for monitoring and
+controlling them.
 
-It has no Omarchy-specific dependencies or configuration. It runs on any iNiR
-3.x install with Docker installed and accessible.
+The Docker model, parser and command helpers are adapted from devgtv's Docker
+widget (MIT).
 
 ## What it does
 
 - **Monitoring summary**: running/total containers, aggregate CPU, aggregate
   memory, a CPU history sparkline and a memory bar.
-- **Per-container bars**: each row shows state, CPU bar/percentage and memory
-  bar/usage.
+- **Per-container monitoring**: state, CPU bar/percentage and memory bar/usage.
+- **Three layouts**: Dashboard, Compact and Tiles.
 - Click a container to select it.
 - Start, stop or restart it with a confirmation step.
 - Open the last 200 log lines, or follow logs, in your terminal.
-- Filter by name, image, state or Compose project from the widget settings.
+- Filter by name, image, state or Compose project.
 - A compact line on the iRiS Island shows `running/total`.
 
-Resource-limit sliders from the original Omarchy bar widget are not in this
-version. The collector and Docker command helpers already support them, so they
-can be added next.
+Resource-limit sliders are not in this version. The collector and Docker
+command helpers already support them, so they can be added next.
+
+## Layouts
+
+| Layout | What it shows |
+|---|---|
+| **Dashboard** | Stat strip with running/CPU/memory, CPU sparkline, and rows with per-container bars |
+| **Compact** | A dense one-line summary and tighter rows, for small widgets |
+| **Tiles** | Two-column cards with a CPU ring, memory bar and state per container |
+
+Set **Layout** in the widget options.
 
 ## Install
 
@@ -51,8 +59,9 @@ inir restart
 
 | Key | Default | Meaning |
 |---|---|---|
+| `layout` | `dashboard` | `dashboard`, `compact` or `tiles` |
 | `refreshSeconds` | `3` | How often the card reads Docker while visible |
-| `maxContainers` | `6` | Rows shown before the `+N more` line |
+| `maxContainers` | `6` | Rows/tiles shown before the `+N more` line |
 | `showStopped` | `true` | Include exited/created containers |
 | `showSummary` | `true` | Show the running/CPU/memory summary strip |
 | `showSparkline` | `true` | Show the CPU history line |
@@ -66,8 +75,8 @@ loads a fixed tab list, and the iRiS sidebars use a fixed section catalogue.
 Adding a Hub widget to those sidebars needs a family-side change, not a change
 to this widget.
 
-The drawing is split into `DockerBackend.qml` and `DockerView.qml` so a family
-sidebar host can reuse it once such a slot exists.
+The drawing is split into `DockerBackend.qml`, `DockerView.qml` and the layout
+components so a family sidebar host can reuse it once such a slot exists.
 
 ## Requirements
 
@@ -92,14 +101,14 @@ The item is shaped like an official iNiR Hub widget:
 - `widget.json` / `hub.json` follow the Hub schema.
 - `translations/en_US.json` covers every `Translation.tr(…)` string.
 - The code imports only the base and the widget SDK, not a family's internals.
-- It uses no Omarchy files, services, paths or launcher commands.
+- It uses no desktop-specific files, services, paths or launcher commands.
 
 The only optional external helper is `xdg-terminal-exec` for logs.
 
 ## Credits
 
-- [devgtv/omarchy-docker](https://github.com/devgtv/omarchy-docker) — original
-  widget, Docker model/parser and command helpers. MIT.
+- devgtv — original Docker model, parser and command helpers. MIT notice kept
+  in [LICENSE](LICENSE).
 - iNiR's widget SDK and Hub conventions.
 
 ## License
