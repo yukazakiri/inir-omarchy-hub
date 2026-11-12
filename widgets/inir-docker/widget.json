@@ -1,0 +1,69 @@
+{
+  "name": "iNiR Docker",
+  "icon": "deployed_code",
+  "version": "0.1.0",
+  "author": "yukazakiri",
+  "description": "Docker containers on your desktop: status, CPU and memory, start/stop/restart and logs. Based on Omarchy Control Docker.",
+  "category": "system",
+  "main": "Docker.qml",
+  "iris": {
+    "main": "IrisDocker.qml",
+    "slots": [
+      "island.desktop"
+    ]
+  },
+  "defaultConfig": {
+    "placementStrategy": "free",
+    "widgetScale": 100,
+    "widgetOpacity": 100,
+    "colorMode": "auto",
+    "dim": 0,
+    "showBackground": true,
+    "backgroundOpacity": 0.16,
+    "borderWidth": 1,
+    "borderOpacity": 0.2,
+    "cornerRadius": -1,
+    "useBlur": false,
+    "x": 320,
+    "y": 200,
+    "refreshSeconds": 3,
+    "maxContainers": 6,
+    "showStopped": true,
+    "filter": ""
+  },
+  "configKeys": {
+    "refreshSeconds": {
+      "type": "int",
+      "default": 3,
+      "min": 1,
+      "max": 60,
+      "step": 1,
+      "label": "Refresh every (seconds)"
+    },
+    "maxContainers": {
+      "type": "int",
+      "default": 6,
+      "min": 1,
+      "max": 20,
+      "step": 1,
+      "label": "Containers to show"
+    },
+    "showStopped": {
+      "type": "bool",
+      "default": true,
+      "label": "Show stopped containers"
+    },
+    "filter": {
+      "type": "string",
+      "default": "",
+      "label": "Filter by name, image, state or Compose project"
+    }
+  },
+  "resizableAxes": {
+    "uniform": "widgetScale"
+  },
+  "defaultSize": {
+    "width": 380,
+    "height": 300
+  }
+}
