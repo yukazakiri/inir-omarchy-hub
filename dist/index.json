@@ -1,0 +1,62 @@
+{
+ "blocked": [],
+ "commit": "599fe0e5e0ace3ba0028fc0d9ce9723a9091a0be",
+ "generated": "2026-11-12T08:04:22+00:00",
+ "home": "https://github.com/snowarch/inir-hub",
+ "items": [
+  {
+   "added": "2026-11-12",
+   "authors": [
+    "yukazakiri"
+   ],
+   "changes": [
+    {
+     "version": "0.1.1",
+     "notes": [
+      "Docker inspect works with containers that do not expose ports"
+     ]
+    }
+   ],
+   "description": "Docker containers on your desktop: status, CPU and memory, start/stop/restart and logs. Based on Omarchy Control Docker.",
+   "families": [
+    "material",
+    "iris"
+   ],
+   "icon": "deployed_code",
+   "id": "inir-docker",
+   "kind": "widget",
+   "license": "MIT",
+   "minInir": "3.0.0",
+   "name": "iNiR Docker",
+   "package": "packages/inir-docker-0.1.1.tar.gz",
+   "path": "widgets/inir-docker",
+   "permissions": [
+    "process"
+   ],
+   "preview": "previews/inir-docker.webp",
+   "sha256": "9acbd97eb7e8b57d9f4acef6bd7bf8087fe64173759a6a6b2f406f996ce49867",
+   "size": 11853,
+   "summary": "Docker containers, status and controls on your desktop",
+   "surfaces": [
+    "desktop",
+    "island"
+   ],
+   "tags": [
+    "docker",
+    "containers",
+    "system",
+    "dev"
+   ],
+   "updated": "2026-11-12",
+   "version": "0.1.1"
+  }
+ ],
+ "name": "iNiR Hub",
+ "permissions": {
+  "files": "Reads or writes files outside its own folder",
+  "inject": "Injects scripts into the site it opens",
+  "network": "Talks to the internet",
+  "process": "Runs commands on your computer"
+ },
+ "schema": 1
+}
