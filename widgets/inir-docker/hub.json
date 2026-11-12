@@ -1,6 +1,6 @@
 {
   "$schema": "../../schema/hub.schema.json",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "summary": "Docker containers, status and controls on your desktop",
   "authors": [
     "yukazakiri"
@@ -18,8 +18,9 @@
   "preview": "preview.webp",
   "minInir": "3.0.0",
   "changes": {
-    "0.1.1": [
-      "Docker inspect works with containers that do not expose ports"
+    "0.2.0": [
+      "Monitoring summary, CPU history and per-container CPU/memory bars"
     ]
-  }
+  },
+  "description": "Docker containers on your desktop with a monitoring summary, CPU history, per-container CPU/memory bars, lifecycle controls and logs."
 }

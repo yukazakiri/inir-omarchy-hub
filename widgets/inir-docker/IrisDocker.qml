@@ -48,13 +48,13 @@ Item {
                         root.snapshot = next
                         root.error = ""
                     } else {
-                        root.error = "offline"
+                        root.error = Translation.tr("offline")
                     }
                 } catch (e) {
-                    root.error = "unreadable"
+                    root.error = Translation.tr("unreadable")
                 }
             } else {
-                root.error = "offline"
+                root.error = Translation.tr("offline")
             }
         }
     }
