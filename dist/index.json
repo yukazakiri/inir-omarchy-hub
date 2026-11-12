@@ -1,7 +1,7 @@
 {
  "blocked": [],
- "commit": "11d4ac83312eceb181c74d3d12eedc28adbc6f4c",
- "generated": "2026-11-12T08:19:11+00:00",
+ "commit": "df7ea905427869185d9ec603e61f5dd5fd885d10",
+ "generated": "2026-11-12T08:19:25+00:00",
  "home": "https://github.com/snowarch/inir-hub",
  "items": [
   {
@@ -36,7 +36,7 @@
    "preview": "previews/inir-docker.webp",
    "sha256": "f079a039be0b7ac78dd4c767658b2f15ddf260c45c5cb3f631bab32f412c4b43",
    "size": 14673,
-   "summary": "Docker containers, status and controls on your desktop",
+   "summary": "Docker containers with live CPU and memory",
    "surfaces": [
     "desktop",
     "island"

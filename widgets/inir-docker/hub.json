@@ -1,7 +1,7 @@
 {
   "$schema": "../../schema/hub.schema.json",
   "version": "0.2.0",
-  "summary": "Docker containers, status and controls on your desktop",
+  "summary": "Docker containers with live CPU and memory",
   "authors": [
     "yukazakiri"
   ],
