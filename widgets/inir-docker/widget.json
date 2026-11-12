@@ -1,7 +1,7 @@
 {
   "name": "iNiR Docker",
   "icon": "deployed_code",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "author": "yukazakiri",
   "description": "Docker containers on your desktop: a running/CPU/memory summary, CPU history, per-container bars, lifecycle controls and logs.",
   "category": "system",

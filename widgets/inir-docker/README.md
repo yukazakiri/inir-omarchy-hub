@@ -58,6 +58,17 @@ inir restart
 | `showSparkline` | `true` | Show the CPU history line |
 | `filter` | empty | Literal text matched against name, image, state and Compose labels |
 
+## Sidebar support
+
+The current iNiR family sidebars do not expose a plugin-widget slot. The
+Material left sidebar loads a fixed widget list, the Material right sidebar
+loads a fixed tab list, and the iRiS sidebars use a fixed section catalogue.
+Adding a Hub widget to those sidebars needs a family-side change, not a change
+to this widget.
+
+The drawing is split into `DockerBackend.qml` and `DockerView.qml` so a family
+sidebar host can reuse it once such a slot exists.
+
 ## Requirements
 
 - Docker CLI and a reachable Docker daemon.
